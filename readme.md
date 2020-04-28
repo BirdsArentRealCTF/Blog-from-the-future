@@ -14,7 +14,7 @@ After we get those we can manually test our payloads.
 r.send(o.encode(["getPost", "1"]))
 ```
 
-<img src="https://github.com/BirdsArentRealCTF/Blog-from-the-future/raw/master/image-20200427112824345.png" alt="image-20200427112824345" style="zoom:200%;" />
+![image-20200427112824345](https://github.com/BirdsArentRealCTF/Blog-from-the-future/raw/master/image-20200427112824345.png)
 
 ```json
 author: 1
@@ -79,3 +79,5 @@ totp.now() # => '677619'
 Login and get the flag!
 
 Don't forget to check my automated blind boolean script https://github.com/BirdsArentRealCTF/Blog-from-the-future/blob/master/index.html
+
+Do you have any questions or suggestion? Feel free to contact via discord. **enjloezz#7444**
